@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="datatable/dataTable.bootstrap.min.css">
+	<style>
+		.bod{
+	background-color: #101b3c;
+	color: white;
+}
+		.height10{
+			height:10px;
+		}
+		.mtop10{
+			margin-top:10px;
+		}
+		.modal-label{
+			position:relative;
+			top:7px
+		}
+	</style>
+</head>
+<body class="bod">
+<div class="container">
+	<div  style="background-color: black; color: white; height: 200px;" class="container-fluid">
+	<h1 class="page-header text-center" style="font-size: 50px;">Agape Primary And Nursery School Accounting System</h1>
+	<div style="display: flex;">
+	<a href="studentreg.php"><h3 style="color: white;">Back</h3></a>
+</div>
+	<br/><br/>
+</div><br/><br/>
+
+
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+						</div>
+
+
+
+
+
+
+			<div class="row">
+			</div>
+			<div class="height10">
+			</div>
+			<h2><a href="print50below.php" class="btn btn-primary">Print PDF</a></h2>
+			<div class="row">
+
+				<table id="myTable" style="width: 1300px; margin-left: -260px; color: black; background-color: white;" class="table table-bordered">
+
+<thead>
+					<tr>
+						<th>Date</th>
+						<th>Reg:No</th>
+						<th>Full Name:</th>
+						<th>Guardian:</th>
+						<td>Guardian's Contact:</td>
+						<th>Amount Paid:</th>
+						<td>Amount to be paid:</td>
+						<td>Balance</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+<tbody>
+        <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal13"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_13">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=13" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal14"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_14">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=14" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal15"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_15">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=15" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal16"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_16">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=16" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>70000</td>
+	   		<td>200000</td>
+	   		<td>130000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal17"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_17">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 70000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=17" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal18"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_18">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=18" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal19"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_19">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=19" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal20"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_20">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=20" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal21"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_21">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=21" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal22"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_22">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=22" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal23"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_23">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=23" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal24"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_24">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=24" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal25"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_25">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=25" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal26"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_26">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=26" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal27"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_27">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=27" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal28"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_28">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_28" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=28" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal29"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_29">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=29" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+     </tbody>
+<tr><td colspan="5"><h1>The Total</h1></td>   <td><h1> 1220000</h1></td> <td><h1> 4000000</h1></td> <td><h1> 2780000</h1></td></tr>
+</table>
+
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="datatable/jquery.dataTables.min.js"></script>
+<script src="datatable/dataTable.bootstrap.min.js"></script>
+<!-- generate datatable on our table -->
+<script>
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+</script>
+</body>
+<footer style="background-color: black; color: white; height: 100px;">
+<br/>
+	<h4 align="center">Designed by Omeny Robert contact macrobert000@gmail.com whatsapp 0757227257</h4></footer>
+<<style>
+.PP{
+	text-align: center;
+}
+</style>
+</html>

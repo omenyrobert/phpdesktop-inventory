@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="datatable/dataTable.bootstrap.min.css">
+	<style>
+		.bod{
+	background-color: #101b3c;
+	color: white;
+}
+		.height10{
+			height:10px;
+		}
+		.mtop10{
+			margin-top:10px;
+		}
+		.modal-label{
+			position:relative;
+			top:7px
+		}
+	</style>
+</head>
+<body class="bod">
+<div class="container">
+	<div  style="background-color: black; color: white; height: 200px;" class="container-fluid">
+	<h1 class="page-header text-center" style="font-size: 50px;">Agape Primary And Nursery School Accounting System</h1>
+	<div style="display: flex;">
+	<a href="index.php"><h3 style="color: white;">Back</h3></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>Report1</h2>
+</div>
+	<br/><br/>
+</div><br/><br/>
+
+
+<div style="width: 2000px;">
+	<h1>Expenditure</h1><a href="greaterorequal.php"><h5>50% and above</h5></a><a href="lessorequal.php"><h5>below 50%</h5></a><a href="seventy.php"><h5>Above 75%</h5></a><a href="lessseventy.php"><h5>below 75%</h5></a>
+<form method="POST" action="uploadexp.php">
+
+<input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined variable: id in <b>E:\school\www\expenditure.php</b> on line <b>52</b><br />
+">
+
+Date:<input type="date" name="date" required="required" style="color: black" />
+Expenditure <input type="text" name="exp"  required="required" style="color: black" />
+Code: <input type="text" name="code" required="required"  style="color: black"/>
+<div style=" display: flex;">
+	<div>
+January: <input type="number" name="jan"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: jan in <b>E:\school\www\expenditure.php</b> on line <b>59</b><br />
+" />
+</div>
+<div>
+Febuary: <input type="number" name="feb"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: feb in <b>E:\school\www\expenditure.php</b> on line <b>62</b><br />
+" />
+</div>
+<div>
+March: <input type="number" name="mar"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: mar in <b>E:\school\www\expenditure.php</b> on line <b>65</b><br />
+" />
+</div>
+<div>
+April: <input type="number" name="apr" style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: apr in <b>E:\school\www\expenditure.php</b> on line <b>68</b><br />
+" />
+</div>
+<div>
+May:<input type="number" name="may"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: may in <b>E:\school\www\expenditure.php</b> on line <b>71</b><br />
+"/>
+</div>
+
+<div>
+June: <input type="number" name="jun" style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: jun in <b>E:\school\www\expenditure.php</b> on line <b>75</b><br />
+" />
+</div>
+<div>
+July:<input type="number" name="jul" style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: jul in <b>E:\school\www\expenditure.php</b> on line <b>78</b><br />
+"/>
+</div>
+
+<div>
+August: <input type="number" name="aug"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: aug in <b>E:\school\www\expenditure.php</b> on line <b>82</b><br />
+" />
+</div>
+<div>
+September: <input type="number" name="sep" style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: sep in <b>E:\school\www\expenditure.php</b> on line <b>85</b><br />
+" />
+</div>
+<div>
+October: <input type="number" name="oct" style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: oct in <b>E:\school\www\expenditure.php</b> on line <b>88</b><br />
+" />
+</div>
+
+<div>
+November: <input type="number" name="nov"  style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: nov in <b>E:\school\www\expenditure.php</b> on line <b>92</b><br />
+" />
+</div>
+<div>
+December: <input type="number" name="dec"   style="color: black" value="<br />
+<b>Notice</b>:  Undefined variable: dec in <b>E:\school\www\expenditure.php</b> on line <b>95</b><br />
+" />
+</div>
+</div>
+<button class="btn" type="submit" name="save" style="background-color: blue;">Save</button>
+
+
+</form>
+</div>
+
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+						</div>
+
+
+
+
+
+
+			<div class="row">
+			</div>
+			<div class="height10">
+			</div>
+			<h2><a href="printexp.php" class="btn btn-primary">Print PDF</a></h2>
+			<div class="row">
+
+				<table id="myTable" style="width: 1300px; margin-left: -210px; color: black; background-color: white;" class="table table-bordered">
+
+<thead>
+					<tr>
+						<th>Date</th>
+						<th>Expenditure</th>
+						<th>Code</th>
+						<th>January</th>
+						<th>Febuary</th>
+						<th>March</th>
+						<th>April</th>
+						<th>May</th>
+						<th>June</th>
+						<th>July</th>
+						<th>August</th>
+						<th>September</th>
+						<th>October</th>
+						<th>November</th>
+						<th>December</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+<tbody>
+        <tr>
+	   		<td>2021-02-09</td>
+	   		<td>computer</td>
+	   		<td>1001</td>
+	   		<td>40</td>
+	   		<td>45</td>
+	   		<td>56</td>
+	   		<td></td>
+	   		<td></td>
+	   		<td>4500</td>
+	   		<td>200000</td>
+	   		<td>646</td>
+	   		<td>4546</td>
+	   		<td>45464</td>
+	   		<td></td>
+	   		<td>3435</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal1"><span class="glyphicon glyphicon-edit"></span> Edit</button>  
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_1">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-09<br/><br/>Expenditure<br/> computer<br/><br/>Code<br/>1001</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="xpenditure.php?id=1" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form_modal1" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editexp.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="1"/>
+														<input type="text" class="form-control" name="date" value="2021-02-09"/>
+													</div>
+													<div class="form-group">
+														<label>Expenditure</label>
+														<input type="text" class="form-control" name="exp" value="computer"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Code</label>
+														<input type="text" class="form-control" name="code" value="1001"/>
+													</div>
+
+													<div class="form-group">
+														<label>Jan</label>
+														<input type="text" class="form-control" name="jan" value="40" />
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Feb</label>
+														<input type="text" class="form-control" name="feb" value="45"/>
+													</div>
+													<div class="form-group">
+														<label>March</label>
+														<input type="text" class="form-control" name="mar" value="56"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>April</label>
+														<input type="text" class="form-control" name="apr" value=""/>
+													</div>
+													<div class="form-group">
+														<label>May</label>
+														<input type="text" class="form-control" name="may" value=""/>
+													</div>
+
+                                                    <div class="form-group">
+														<label>June</label>
+														<input type="text" class="form-control" name="jun" value="4500"/>
+													</div>
+
+													<div class="form-group">
+														<label>July</label>
+														<input type="text" class="form-control" name="jul" value="200000"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Aug</label>
+														<input type="text" class="form-control" name="aug" value="646"/>
+													</div>
+													<div class="form-group">
+														<label>Sep</label>
+														<input type="text" class="form-control" name="sep" value="4546" />
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Oct</label>
+														<input type="text" class="form-control" name="oct" value="45464" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Nov</label>
+														<input type="text" class="form-control" name="nov" value="" />
+													</div>
+                                                    <div class="form-group">
+														<label>Dec</label>
+														<input type="text" class="form-control" name="dec" value="3435"/>
+													</div>
+
+
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+             <tr>
+	   		<td>2021-02-16</td>
+	   		<td>firewood</td>
+	   		<td>121</td>
+	   		<td>20330</td>
+	   		<td>300</td>
+	   		<td>400</td>
+	   		<td>500</td>
+	   		<td>600</td>
+	   		<td>500</td>
+	   		<td>400</td>
+	   		<td>400</td>
+	   		<td>800</td>
+	   		<td>9000</td>
+	   		<td>100</td>
+	   		<td>300</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal2"><span class="glyphicon glyphicon-edit"></span> Edit</button>  
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_2">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-16<br/><br/>Expenditure<br/> firewood<br/><br/>Code<br/>121</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="xpenditure.php?id=2" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form_modal2" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editexp.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="2"/>
+														<input type="text" class="form-control" name="date" value="2021-02-16"/>
+													</div>
+													<div class="form-group">
+														<label>Expenditure</label>
+														<input type="text" class="form-control" name="exp" value="firewood"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Code</label>
+														<input type="text" class="form-control" name="code" value="121"/>
+													</div>
+
+													<div class="form-group">
+														<label>Jan</label>
+														<input type="text" class="form-control" name="jan" value="20330" />
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Feb</label>
+														<input type="text" class="form-control" name="feb" value="300"/>
+													</div>
+													<div class="form-group">
+														<label>March</label>
+														<input type="text" class="form-control" name="mar" value="400"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>April</label>
+														<input type="text" class="form-control" name="apr" value="500"/>
+													</div>
+													<div class="form-group">
+														<label>May</label>
+														<input type="text" class="form-control" name="may" value="600"/>
+													</div>
+
+                                                    <div class="form-group">
+														<label>June</label>
+														<input type="text" class="form-control" name="jun" value="500"/>
+													</div>
+
+													<div class="form-group">
+														<label>July</label>
+														<input type="text" class="form-control" name="jul" value="400"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Aug</label>
+														<input type="text" class="form-control" name="aug" value="400"/>
+													</div>
+													<div class="form-group">
+														<label>Sep</label>
+														<input type="text" class="form-control" name="sep" value="800" />
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Oct</label>
+														<input type="text" class="form-control" name="oct" value="9000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Nov</label>
+														<input type="text" class="form-control" name="nov" value="100" />
+													</div>
+                                                    <div class="form-group">
+														<label>Dec</label>
+														<input type="text" class="form-control" name="dec" value="300"/>
+													</div>
+
+
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+             <tr>
+	   		<td>2021-02-25</td>
+	   		<td>buying chairs</td>
+	   		<td>201</td>
+	   		<td>300000</td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td>500000</td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal4"><span class="glyphicon glyphicon-edit"></span> Edit</button>  
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_4">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-25<br/><br/>Expenditure<br/> buying chairs<br/><br/>Code<br/>201</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="xpenditure.php?id=4" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form_modal4" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editexp.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="4"/>
+														<input type="text" class="form-control" name="date" value="2021-02-25"/>
+													</div>
+													<div class="form-group">
+														<label>Expenditure</label>
+														<input type="text" class="form-control" name="exp" value="buying chairs"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Code</label>
+														<input type="text" class="form-control" name="code" value="201"/>
+													</div>
+
+													<div class="form-group">
+														<label>Jan</label>
+														<input type="text" class="form-control" name="jan" value="300000" />
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Feb</label>
+														<input type="text" class="form-control" name="feb" value=""/>
+													</div>
+													<div class="form-group">
+														<label>March</label>
+														<input type="text" class="form-control" name="mar" value=""/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>April</label>
+														<input type="text" class="form-control" name="apr" value=""/>
+													</div>
+													<div class="form-group">
+														<label>May</label>
+														<input type="text" class="form-control" name="may" value=""/>
+													</div>
+
+                                                    <div class="form-group">
+														<label>June</label>
+														<input type="text" class="form-control" name="jun" value=""/>
+													</div>
+
+													<div class="form-group">
+														<label>July</label>
+														<input type="text" class="form-control" name="jul" value="500000"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Aug</label>
+														<input type="text" class="form-control" name="aug" value=""/>
+													</div>
+													<div class="form-group">
+														<label>Sep</label>
+														<input type="text" class="form-control" name="sep" value="" />
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Oct</label>
+														<input type="text" class="form-control" name="oct" value="" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Nov</label>
+														<input type="text" class="form-control" name="nov" value="" />
+													</div>
+                                                    <div class="form-group">
+														<label>Dec</label>
+														<input type="text" class="form-control" name="dec" value=""/>
+													</div>
+
+
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+             <tr>
+	   		<td>2021-01-12</td>
+	   		<td>slashing the compound</td>
+	   		<td>201</td>
+	   		<td>300000</td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td></td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal5"><span class="glyphicon glyphicon-edit"></span> Edit</button>  
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_5">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-01-12<br/><br/>Expenditure<br/> slashing the compound<br/><br/>Code<br/>201</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="xpenditure.php?id=5" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form_modal5" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editexp.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="5"/>
+														<input type="text" class="form-control" name="date" value="2021-01-12"/>
+													</div>
+													<div class="form-group">
+														<label>Expenditure</label>
+														<input type="text" class="form-control" name="exp" value="slashing the compound"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Code</label>
+														<input type="text" class="form-control" name="code" value="201"/>
+													</div>
+
+													<div class="form-group">
+														<label>Jan</label>
+														<input type="text" class="form-control" name="jan" value="300000" />
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Feb</label>
+														<input type="text" class="form-control" name="feb" value=""/>
+													</div>
+													<div class="form-group">
+														<label>March</label>
+														<input type="text" class="form-control" name="mar" value=""/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>April</label>
+														<input type="text" class="form-control" name="apr" value=""/>
+													</div>
+													<div class="form-group">
+														<label>May</label>
+														<input type="text" class="form-control" name="may" value=""/>
+													</div>
+
+                                                    <div class="form-group">
+														<label>June</label>
+														<input type="text" class="form-control" name="jun" value=""/>
+													</div>
+
+													<div class="form-group">
+														<label>July</label>
+														<input type="text" class="form-control" name="jul" value=""/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Aug</label>
+														<input type="text" class="form-control" name="aug" value=""/>
+													</div>
+													<div class="form-group">
+														<label>Sep</label>
+														<input type="text" class="form-control" name="sep" value="" />
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Oct</label>
+														<input type="text" class="form-control" name="oct" value="" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Nov</label>
+														<input type="text" class="form-control" name="nov" value="" />
+													</div>
+                                                    <div class="form-group">
+														<label>Dec</label>
+														<input type="text" class="form-control" name="dec" value=""/>
+													</div>
+
+
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+     </tbody>
+<tr><td colspan="3"><h1>The Total</h1></td>   <td><h1> 620370</h1></td>
+ <td><h1> 345</h1></td>
+  <td><h1> 456</h1></td>
+  <td><h1> 500</h1></td>
+  <td><h1> 600</h1></td>
+  <td><h1> 5000</h1></td>
+  <td><h1> 700400</h1></td>
+  <td><h1> 1046</h1></td>
+  <td><h1> 5346</h1></td>
+  <td><h1> 54464</h1></td>
+  <td><h1> 100</h1></td>
+  <td><h1> 3735</h1></td>
+   <td><h1>1392362</h1></td>
+
+</tr>
+</table>
+
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="datatable/jquery.dataTables.min.js"></script>
+<script src="datatable/dataTable.bootstrap.min.js"></script>
+<!-- generate datatable on our table -->
+<script>
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+</script>
+</body>
+<footer style="background-color: black; color: white; height: 100px;">
+<br/>
+	<h4 align="center">Designed by Omeny Robert contact macrobert000@gmail.com whatsapp 0757227257</h4></footer>
+<<style>
+.PP{
+	text-align: center;
+}
+</style>
+</html>

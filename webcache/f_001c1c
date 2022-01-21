@@ -1,0 +1,1085 @@
+
+
+<script>alert(' informational deleted successfully!')</script><script>window.location='dashboard.php'</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>System</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="datatable/dataTable.bootstrap.min.css">
+	<style>
+		.bod{
+	background-color: white;
+	color: black;
+}
+		.height10{
+			height:10px;
+		}
+		.mtop10{
+			margin-top:10px;
+		}
+		.modal-label{
+			position:relative;
+			top:7px
+		}
+	</style>
+</head>
+<body class="bod">
+<div class="container-fluid">
+
+   	<div  style="background-color: #c210e8; color: white; height: 200px;" class="container-fluid">
+	<h1 class="page-header text-center" style="font-size: 50px;">INVENTORY SOFTWARE</h1>
+	<a href="dashboard.php" style="color: white;"><h4>Dashboard</h4></a><a href="index.php" style="color: white;">logout</a>
+	<form method="post" action="changepass.php" style="text-align: right; margin-top: -10px;">
+		<input type="text" placeholder="username" style="color: black;" name="username" required="required">
+		<input type="password" placeholder="password" style="color: black;" name="password" required="required">
+		<button type="submit" name="changep" class="btn btn-primary">Change</button>
+		<br/>
+	</form>
+	
+	<br/><br/>
+</div><br/><br/>
+<div class="row">      
+<div class="col-md-2" >
+  <div style="background-color: #e810c7; padding: 5px; text-align: center;" >
+      	<h2>Management Panel</h3>
+      </div>
+      <div style="background-color: #6c676e; padding: 20px; ">
+	  <a href="printreceipt.php" style="text-decoration: none; color:white;">print</a><br/>
+		     <a href="servicesales.php" style="color: white;" >Sales from Serives</a><br/>
+		     <a href="stocksales.php" style="color: white;" >Sales from stock</a><br/>
+		      <a href="stockedit.php" style="color: white;" >Edit sales</a>
+		 </div>
+
+	
+</div>   
+
+       <div class="col-md-10">
+
+       <div class="row" >
+	<div class="col-md-3" style="background-color: #f2126c; height: 150px; color: white; width: 200px; text-align: center; margin: 5px; " >
+       <h2>Total Items</h2>
+       <h1> 9</h1>
+		
+	</div>
+	<div class="col-md-3" style="background-color: #0a9914; height: 150px; color: white; text-align: center; width: 200px; margin: 5px;" >
+		<br/>
+		<h2>Profits</h2>
+       <h1></h1>
+	</div>
+	<div class="col-md-3" style="background-color: #066692; height: 150px; color: white; text-align: center; width: 200px; margin: 5px; " >
+		<br/>
+		<h2>Expenditure</h2>
+       <h1></h1>
+	</div>
+	<a href="daily.php">
+	<div class="col-md-3" style="background-color: gold; height: 150px; color: white; text-align: center; width: 200px; margin: 5px; " >
+		<br/>
+		<h4>All Sales</h4>
+		<h4>Daily</h4>
+		<h4>Weekly</h4>
+		<h4>Monthly</h4>
+       <h1></h1>
+	</div></a>
+</div>
+
+<div class="row">
+	<br/><br/>
+	 <div>
+	</div>
+	 	<div class="row">
+		      	</div>
+		      </div>
+	<br/><br/>
+	<h4>Add Stock and Services</h4>
+	<br/>
+	<form method="post" action="savestock.php" style="margin-bottom: 100px;">
+	<div class="col-md-2">
+		<label>Item</label><br/>
+		<input type="text" name="item" class="form-control" required="required">
+	</div>
+
+	<div class="col-md-2">
+		<label>Quantity</label><br/>
+		<input type="number" name="qty" class="form-control" required="required">
+	</div>
+
+	<div class="col-md-2">
+		<label>Unit Buying Price</label><br/>
+		<input type="number" name="bprice" class="form-control" required="required">
+	</div>
+
+	<div class="col-md-2">
+		<label>Unit Selling Price</label><br/>
+		<input type="number" name="sprice" class="form-control" required="required">
+	</div>
+
+	<div class="col-md-2">
+		<label>Type</label><br/>
+		<select name="ttype" class="form-control" required="required" >
+			<option value="stock">stock</option>
+			<option value="service">service</option>
+		</select>		
+	</div>
+
+	<div class="col-md-2"><br/>
+		<button type="submit" name="savestock" class="btn btn-primary" >Save</button>
+		
+	</div>
+	</form>
+<br/><br/>
+</div>
+
+<br/>
+<div id="stock" style="margin:1px;" class="row" >
+<div class="col-md-7">
+<table id="myTable" style=" color: black; background-color: white;" class="table table-bordered">
+<thead>
+					<tr><th>Date</th>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Unit Buying Price</th>
+						<th>Unit Selling Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+<tbody>
+        <tr><td>2021-12-17</td>
+	   		<td>Quinin</td>
+	   		<td>100</td>
+	   		<td>50</td>
+	   		<td>250</td>
+	   	
+<td>
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale24">S</button> 
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit24">Ed</button> 
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_24"><span class="glyphicon glyphicon-trash"></span></button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;Quinin<br/><br/>Quantity<br/> 100<br/><br/>Unit Selling Price<br/>250</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="dashboard.php?id=24" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="edit.php">
+            		
+            		<input type="hidden" name="id" value="24" class="form-control" >
+
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="Quinin" class="form-control" ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="100" class="form-control" ><br/><br/>
+
+                     <label>Unit Buying Price</label><br/>
+            		<input type="number" name="bprice" value="50" class="form-control" ><br/><br/>
+                    <label>Unit Selling Price</label>
+            		<input type="number" name="sprice" value="250" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="edititem" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" style="color: black;" id="sale24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter Sale</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="sale.php">
+            		
+            		<input type="hidden" name="id" value="24" class="form-control" >
+                     <input type="text" name="sitem" value="Quinin" class="form-control" readOnly ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="sqty" class="form-control" >
+					 <input type="hidden" name="dqty" value="100" class="form-control" >
+            		<input type="hidden" name="sbprice" value="50" class="form-control" >
+					<input type="hidden" name="ttype" value="stock" class="form-control" >
+            		<input type="hidden" name="ssprice" value="250" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="savesale" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" style="color: black;" id="stock24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter New Stock</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="newstock.php">
+            		
+            		<input type="hidden" name="id" value="24" class="form-control" >
+					<input type="hidden" name="ttype" value="stock" class="form-control" >
+                                   
+                     <input type="text" name="item" value="Quinin" class="form-control" readOnly ><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" class="form-control" ><br/>
+					 <label>Buying price</label><br/>
+            		<input type="number" name="bprice" value="50" class="form-control" ><br/>
+                    <label>Selling Price</label><br/>
+            		<input type="number" name="sprice" value="250" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="newstock" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+             <tr><td>2021-12-17</td>
+	   		<td>COunselling</td>
+	   		<td>-8</td>
+	   		<td>0</td>
+	   		<td>100,000</td>
+	   	
+<td>
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale29">S</button> 
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit29">Ed</button> 
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_29"><span class="glyphicon glyphicon-trash"></span></button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;COunselling<br/><br/>Quantity<br/> 1<br/><br/>Unit Selling Price<br/>100000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="dashboard.php?id=29" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="edit.php">
+            		
+            		<input type="hidden" name="id" value="29" class="form-control" >
+
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="COunselling" class="form-control" ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="1" class="form-control" ><br/><br/>
+
+                     <label>Unit Buying Price</label><br/>
+            		<input type="number" name="bprice" value="0" class="form-control" ><br/><br/>
+                    <label>Unit Selling Price</label>
+            		<input type="number" name="sprice" value="100000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="edititem" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" style="color: black;" id="sale29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter Sale</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="sale.php">
+            		
+            		<input type="hidden" name="id" value="29" class="form-control" >
+                     <input type="text" name="sitem" value="COunselling" class="form-control" readOnly ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="sqty" class="form-control" >
+					 <input type="hidden" name="dqty" value="-8" class="form-control" >
+            		<input type="hidden" name="sbprice" value="0" class="form-control" >
+					<input type="hidden" name="ttype" value="service" class="form-control" >
+            		<input type="hidden" name="ssprice" value="100000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="savesale" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" style="color: black;" id="stock29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter New Stock</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="newstock.php">
+            		
+            		<input type="hidden" name="id" value="29" class="form-control" >
+					<input type="hidden" name="ttype" value="service" class="form-control" >
+                                   
+                     <input type="text" name="item" value="COunselling" class="form-control" readOnly ><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" class="form-control" ><br/>
+					 <label>Buying price</label><br/>
+            		<input type="number" name="bprice" value="0" class="form-control" ><br/>
+                    <label>Selling Price</label><br/>
+            		<input type="number" name="sprice" value="100000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="newstock" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+             <tr><td>2021-12-17</td>
+	   		<td>Face masks</td>
+	   		<td>2,000</td>
+	   		<td>500</td>
+	   		<td>1,000</td>
+	   	
+<td>
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale32">S</button> 
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit32">Ed</button> 
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_32"><span class="glyphicon glyphicon-trash"></span></button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;Face masks<br/><br/>Quantity<br/> 2000<br/><br/>Unit Selling Price<br/>1000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="dashboard.php?id=32" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="edit.php">
+            		
+            		<input type="hidden" name="id" value="32" class="form-control" >
+
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="Face masks" class="form-control" ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="2000" class="form-control" ><br/><br/>
+
+                     <label>Unit Buying Price</label><br/>
+            		<input type="number" name="bprice" value="500" class="form-control" ><br/><br/>
+                    <label>Unit Selling Price</label>
+            		<input type="number" name="sprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="edititem" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" style="color: black;" id="sale32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter Sale</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="sale.php">
+            		
+            		<input type="hidden" name="id" value="32" class="form-control" >
+                     <input type="text" name="sitem" value="Face masks" class="form-control" readOnly ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="sqty" class="form-control" >
+					 <input type="hidden" name="dqty" value="2000" class="form-control" >
+            		<input type="hidden" name="sbprice" value="500" class="form-control" >
+					<input type="hidden" name="ttype" value="" class="form-control" >
+            		<input type="hidden" name="ssprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="savesale" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" style="color: black;" id="stock32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter New Stock</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="newstock.php">
+            		
+            		<input type="hidden" name="id" value="32" class="form-control" >
+					<input type="hidden" name="ttype" value="" class="form-control" >
+                                   
+                     <input type="text" name="item" value="Face masks" class="form-control" readOnly ><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" class="form-control" ><br/>
+					 <label>Buying price</label><br/>
+            		<input type="number" name="bprice" value="500" class="form-control" ><br/>
+                    <label>Selling Price</label><br/>
+            		<input type="number" name="sprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="newstock" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+             <tr><td>2021-12-17</td>
+	   		<td>face masks</td>
+	   		<td>2,000</td>
+	   		<td>300</td>
+	   		<td>1,000</td>
+	   	
+<td>
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale33">S</button> 
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit33">Ed</button> 
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_33"><span class="glyphicon glyphicon-trash"></span></button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;face masks<br/><br/>Quantity<br/> 2000<br/><br/>Unit Selling Price<br/>1000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="dashboard.php?id=33" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="edit.php">
+            		
+            		<input type="hidden" name="id" value="33" class="form-control" >
+
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="face masks" class="form-control" ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="2000" class="form-control" ><br/><br/>
+
+                     <label>Unit Buying Price</label><br/>
+            		<input type="number" name="bprice" value="300" class="form-control" ><br/><br/>
+                    <label>Unit Selling Price</label>
+            		<input type="number" name="sprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="edititem" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" style="color: black;" id="sale33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter Sale</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="sale.php">
+            		
+            		<input type="hidden" name="id" value="33" class="form-control" >
+                     <input type="text" name="sitem" value="face masks" class="form-control" readOnly ><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="sqty" class="form-control" >
+					 <input type="hidden" name="dqty" value="2000" class="form-control" >
+            		<input type="hidden" name="sbprice" value="300" class="form-control" >
+					<input type="hidden" name="ttype" value="" class="form-control" >
+            		<input type="hidden" name="ssprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="savesale" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" style="color: black;" id="stock33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Enter New Stock</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="newstock.php">
+            		
+            		<input type="hidden" name="id" value="33" class="form-control" >
+					<input type="hidden" name="ttype" value="" class="form-control" >
+                                   
+                     <input type="text" name="item" value="face masks" class="form-control" readOnly ><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" class="form-control" ><br/>
+					 <label>Buying price</label><br/>
+            		<input type="number" name="bprice" value="300" class="form-control" ><br/>
+                    <label>Selling Price</label><br/>
+            		<input type="number" name="sprice" value="1000" class="form-control" >
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="newstock" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+     </tbody>
+
+</table>
+</div>
+<div class="col-md-5">
+	<form action="addtoreceipt.php" method="POST">
+		<h4>Add Customers details</h4>
+		<div style="display:flex;">
+		<input type="text" name="fullname" class="form-control" placeholder="enter full name">
+		<input type="text" name="addresss" class="form-control" placeholder="Address">
+		<input type="text" name="phone" class="form-control" placeholder="phone number">
+
+		</div>
+		<br/>
+		<button class="btn btn-primary" type="submit" name="addtoreceipt">Add to receipt</button>
+	</form>
+	<br/>
+<table  style=" color: black; background-color: white;" class="table table-bordered">
+<thead>
+					<tr><th>Item</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Total</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+<tbody>
+        <tr>
+	   		<td>Quatam</td>
+	   		<td>200</td>
+	   		<td>7,000</td>
+	   		<td>1,400,000</td>
+	   	
+<td>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit22">Ed</button> 
+|<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_22">Del</button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;QuatamQuantity<br/> 200<br/>Unit Selling Price<br/>7000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="deletereceipt.php?id=22" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="editreceipt.php">
+            		
+            		<input type="hidden" name="id" value="22" class="form-control" >
+                    <input type="hidden" name="ssprice" value="7000" class="form-control" >
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="Quatam" class="form-control" readOnly><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="200" class="form-control" ><br/><br/>
+                 
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="editreceipt" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+             <tr>
+	   		<td>COunselling</td>
+	   		<td>2</td>
+	   		<td>100,000</td>
+	   		<td>200,000</td>
+	   	
+<td>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit23">Ed</button> 
+|<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_23">Del</button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;COunsellingQuantity<br/> 2<br/>Unit Selling Price<br/>100000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="deletereceipt.php?id=29" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="editreceipt.php">
+            		
+            		<input type="hidden" name="id" value="29" class="form-control" >
+                    <input type="hidden" name="ssprice" value="100000" class="form-control" >
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="COunselling" class="form-control" readOnly><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="2" class="form-control" ><br/><br/>
+                 
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="editreceipt" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+             <tr>
+	   		<td>Quatam</td>
+	   		<td>50</td>
+	   		<td>7,000</td>
+	   		<td>350,000</td>
+	   	
+<td>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit24">Ed</button> 
+|<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_24">Del</button>
+</td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<p class="text-center">Item<br/>&nbsp;&nbsp;QuatamQuantity<br/> 50<br/>Unit Selling Price<br/>7000</p>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="deletereceipt.php?id=34" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="color: black;" id="edit24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">edit</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<form method="post" action="editreceipt.php">
+            		
+            		<input type="hidden" name="id" value="34" class="form-control" >
+                    <input type="hidden" name="ssprice" value="7000" class="form-control" >
+                    <label>Item</label><br/>
+                     <input type="text" name="item" value="Quatam" class="form-control" readOnly><br/><br/>
+
+                     <label>Quantity</label><br/>
+                     <input type="number" name="qty" value="50" class="form-control" ><br/><br/>
+                 
+				
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="editreceipt" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+     
+    <div style="display: flex; justify-content: space-between;">
+	<p><b>Josh </b></p>
+	   		<p><b>0778844</b></p>
+	   		<p><b>Buk</b></p>
+	</div>
+	   		
+			   	   	
+</tbody>
+<tr><td colspan="3"><h4>Total</h4></td> <td><h4>1,950,000</h4></td></tr>
+</table>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="profit" style="margin-left: 100px; margin-right: 100px; margin-top:100px; margin-bottom: 100px;">
+
+
+<table id="myTable2" style=" color: black; background-color: white;" class="table table-bordered">
+<thead>
+					<tr>
+						<th>Date</th>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Quantity Sold</th>
+						<th>Quantity Remaining</th>
+						<th>Costs</th>
+						<th>Sales</th>
+						<th>Profits</th>
+					</tr>
+				</thead>
+<tbody>
+
+
+
+ 	        
+        	<tr>
+        		<td>2021-12-18</td>
+        		<td>Quatam</td>
+        		<td>200</td>
+        		<td>50</td>
+        		<td>150</td>
+        		<td>200,000</td>
+        		<td>350,000</td>
+        		<td>150,000</td>
+        		
+	   	
+	   	</tr>
+	  
+	   		
+      
+  	
+	   
+       
+</tbody>
+<tr><td colspan="5"><h3>Total</h3></td> <td><h3>200,000</h3></td> <td> <h3>350,000	</h3></td>  <td><h3>150,000	</h3></td></tr>
+</table>
+ 
+</div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+			
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="datatable/jquery.dataTables.min.js"></script>
+<script src="datatable/dataTable.bootstrap.min.js"></script>
+<!-- generate datatable on our table -->
+<script>
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+
+
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable2').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+
+
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable3').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+
+
+</script>
+</body>
+
+</html>

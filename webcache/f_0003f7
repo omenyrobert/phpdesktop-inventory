@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="datatable/dataTable.bootstrap.min.css">
+	<style>
+		.height10{
+			height:10px;
+		}
+		.mtop10{
+			margin-top:10px;
+		}
+		.modal-label{
+			position:relative;
+			top:7px
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div  style="background-color: black; color: white; height: 200px;" class="container-fluid">
+	<h1 class="page-header text-center" style="font-size: 50px;">Accounting System</h1>
+	<div style="display: flex;">
+	<div><a href="pro2.php"><h3 style="color: white;">Report2</h3></a></div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<div><a href="pro3.php"><h3 style="color: white;">Report3</h3></a></div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<div><a href="pro4.php"><h3 style="color: white;">Report4</h3></a></div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<div><a href="pro5.php"><h3 style="color: white;">Report5</h3></a></div>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="imag.php">mag</a>
+</div>
+	<br/><br/>
+</div><br/><br/>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+						</div>
+			<div class="row">
+				<a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Add Invoice</a>
+			</div>
+			<div class="height10">
+			</div>
+			<h2><a href="print.php" class="btn btn-primary">Print PDF</a></h2>
+			<div class="row">
+
+<div><h2 style="color: blue;"><u>
+							change this table title to any title of your desire pro1					</u></h2><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#title"><span class="glyphicon glyphicon-edit"></span> Edit</button> </div>
+<div class="modal fade" id="title" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit Your title</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Title</label>
+														<input type="text" class="form-control" name="title" value="change this table title to any title of your desire pro1" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+				<table id="myTable" style="width: 1300px; margin-left: -210px;" class="table table-bordered table-striped">
+
+					<thead>
+						<th>Date</th>
+						<th>Paid By</th>
+						<th>Received By</th>
+						<th>Reason</th>
+						<th>Receiver's Telephone</th>
+						<th>Invoice's image</th>
+						<th>Amount</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+						        <tr>
+	   		<td>2020-11-10</td>
+	   		<td>Nyote Johnson Matte</td>
+	   		<td>Don Bosco</td>
+	   		<td>fuel to church</td>
+	   		<td>no number</td>
+	   		<td>949784.jpg</td>
+	   		<td>1200</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal6"><span class="glyphicon glyphicon-edit"></span> Edit</button> |
+	   		 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_modal16"><span class="glyphicon glyphicon-reg"></span>Image</button> 
+	   		 | <a class="btn btn-danger" href="delete.php?id=6">Delete</a></td>				
+	   		</td>
+	   	</tr>
+
+<div class="modal fade" id="form_modal6" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="edit.php">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit and Update</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="6"/>
+														<input type="text" class="form-control" name="date" value="2020-11-10" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Paid by </label>
+														<input type="text" class="form-control" name="name" value="Nyote Johnson Matte" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Received by </label>
+														<input type="text" class="form-control" name="name2" value="Don Bosco" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Reason</label>
+														<input type="text" class="form-control" name="reason" value="fuel to church" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Receiver's Telephone</label>
+														<input type="text" class="form-control" name="tel" value="no number" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" class="form-control" name="amount" value="1200" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+<div class="modal fade" id="form_modal16" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="add.php">
+											<div class="modal-header">
+												<h3 class="modal-title">View Your Invoice image</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+												
+													<div class="form-group">
+														<img src="image/<br />
+<b>Notice</b>:  Undefined variable: row in <b>E:\Sys\ACCOUNT\www\index.php</b> on line <b>236</b><br />
+ " width="100%" alt="image">
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+              <tr>
+	   		<td>2020-11-10</td>
+	   		<td>Nyote Johnson Matte</td>
+	   		<td>Don Bosco</td>
+	   		<td>fuel to church</td>
+	   		<td>no number</td>
+	   		<td>485899.jpg</td>
+	   		<td>1200</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal7"><span class="glyphicon glyphicon-edit"></span> Edit</button> |
+	   		 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_modal17"><span class="glyphicon glyphicon-reg"></span>Image</button> 
+	   		 | <a class="btn btn-danger" href="delete.php?id=7">Delete</a></td>				
+	   		</td>
+	   	</tr>
+
+<div class="modal fade" id="form_modal7" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="edit.php">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit and Update</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="7"/>
+														<input type="text" class="form-control" name="date" value="2020-11-10" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Paid by </label>
+														<input type="text" class="form-control" name="name" value="Nyote Johnson Matte" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Received by </label>
+														<input type="text" class="form-control" name="name2" value="Don Bosco" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Reason</label>
+														<input type="text" class="form-control" name="reason" value="fuel to church" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Receiver's Telephone</label>
+														<input type="text" class="form-control" name="tel" value="no number" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" class="form-control" name="amount" value="1200" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+<div class="modal fade" id="form_modal17" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="add.php">
+											<div class="modal-header">
+												<h3 class="modal-title">View Your Invoice image</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+												
+													<div class="form-group">
+														<img src="image/<br />
+<b>Notice</b>:  Undefined variable: row in <b>E:\Sys\ACCOUNT\www\index.php</b> on line <b>236</b><br />
+ " width="100%" alt="image">
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+              <tr>
+	   		<td>2020-11-09</td>
+	   		<td>watiti</td>
+	   		<td>quil</td>
+	   		<td>acting</td>
+	   		<td>078464664</td>
+	   		<td>720958.jpg</td>
+	   		<td>500000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal8"><span class="glyphicon glyphicon-edit"></span> Edit</button> |
+	   		 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_modal18"><span class="glyphicon glyphicon-reg"></span>Image</button> 
+	   		 | <a class="btn btn-danger" href="delete.php?id=8">Delete</a></td>				
+	   		</td>
+	   	</tr>
+
+<div class="modal fade" id="form_modal8" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="edit.php">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit and Update</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="8"/>
+														<input type="text" class="form-control" name="date" value="2020-11-09" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Paid by </label>
+														<input type="text" class="form-control" name="name" value="watiti" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Received by </label>
+														<input type="text" class="form-control" name="name2" value="quil" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Reason</label>
+														<input type="text" class="form-control" name="reason" value="acting" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Receiver's Telephone</label>
+														<input type="text" class="form-control" name="tel" value="078464664" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" class="form-control" name="amount" value="500000" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+<div class="modal fade" id="form_modal18" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="add.php">
+											<div class="modal-header">
+												<h3 class="modal-title">View Your Invoice image</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+												
+													<div class="form-group">
+														<img src="image/<br />
+<b>Notice</b>:  Undefined variable: row in <b>E:\Sys\ACCOUNT\www\index.php</b> on line <b>236</b><br />
+ " width="100%" alt="image">
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+              <tr>
+	   		<td>2020-11-08</td>
+	   		<td>jose</td>
+	   		<td>omeny</td>
+	   		<td>American pancake</td>
+	   		<td>075564</td>
+	   		<td>260234.jpg</td>
+	   		<td>70000</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal9"><span class="glyphicon glyphicon-edit"></span> Edit</button> |
+	   		 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_modal19"><span class="glyphicon glyphicon-reg"></span>Image</button> 
+	   		 | <a class="btn btn-danger" href="delete.php?id=9">Delete</a></td>				
+	   		</td>
+	   	</tr>
+
+<div class="modal fade" id="form_modal9" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="edit.php">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit and Update</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="9"/>
+														<input type="text" class="form-control" name="date" value="2020-11-08" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Paid by </label>
+														<input type="text" class="form-control" name="name" value="jose" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Received by </label>
+														<input type="text" class="form-control" name="name2" value="omeny" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Reason</label>
+														<input type="text" class="form-control" name="reason" value="American pancake" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Receiver's Telephone</label>
+														<input type="text" class="form-control" name="tel" value="075564" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" class="form-control" name="amount" value="70000" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+<div class="modal fade" id="form_modal19" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="add.php">
+											<div class="modal-header">
+												<h3 class="modal-title">View Your Invoice image</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+												
+													<div class="form-group">
+														<img src="image/<br />
+<b>Notice</b>:  Undefined variable: row in <b>E:\Sys\ACCOUNT\www\index.php</b> on line <b>236</b><br />
+ " width="100%" alt="image">
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+              <tr>
+	   		<td>2020-11-10</td>
+	   		<td>report </td>
+	   		<td>report2</td>
+	   		<td>repooo</td>
+	   		<td>3435535553</td>
+	   		<td>478655.jpg</td>
+	   		<td>54545454</td>
+	   		<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal10"><span class="glyphicon glyphicon-edit"></span> Edit</button> |
+	   		 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_modal110"><span class="glyphicon glyphicon-reg"></span>Image</button> 
+	   		 | <a class="btn btn-danger" href="delete.php?id=10">Delete</a></td>				
+	   		</td>
+	   	</tr>
+
+<div class="modal fade" id="form_modal10" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="edit.php">
+											<div class="modal-header">
+												<h3 class="modal-title">Edit and Update</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="10"/>
+														<input type="text" class="form-control" name="date" value="2020-11-10" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Paid by </label>
+														<input type="text" class="form-control" name="name" value="report " required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Received by </label>
+														<input type="text" class="form-control" name="name2" value="report2" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Reason</label>
+														<input type="text" class="form-control" name="reason" value="repooo" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Receiver's Telephone</label>
+														<input type="text" class="form-control" name="tel" value="3435535553" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" class="form-control" name="amount" value="54545454" required="required"/>
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+<div class="modal fade" id="form_modal110" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="add.php">
+											<div class="modal-header">
+												<h3 class="modal-title">View Your Invoice image</h3>
+											</div>
+											<div class="modal-body">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+												
+													<div class="form-group">
+														<img src="image/<br />
+<b>Notice</b>:  Undefined variable: row in <b>E:\Sys\ACCOUNT\www\index.php</b> on line <b>236</b><br />
+ " width="100%" alt="image">
+													</div>
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+      						
+					</tbody>
+					<tr><td colspan="6"><h1>The Grand Total</h1></td>   <td><h1> 55117854</h1></td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<!-- Add New -->
+<div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Add Invoice</h4></center>
+            </div>
+            <div class="modal-body">
+			<div class="container-fluid">
+			<form method="POST" action="add.php">
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Date:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="date" class="form-control" name="date" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Paid By:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="name" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Received By:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="name2" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Reason:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="reason" required>
+					</div>
+				</div>
+               <div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Receiver's Telephone:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="tel" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Invoice's image:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="file" class="form-control" name="image" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-2">
+						<label class="control-label modal-label">Amount:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" name="amount" required>
+					</div>
+				</div>
+
+            </div> 
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" name="add" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+			</form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="datatable/jquery.dataTables.min.js"></script>
+<script src="datatable/dataTable.bootstrap.min.js"></script>
+<!-- generate datatable on our table -->
+<script>
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+</script>
+</body>
+<footer style="background-color: black; color: white; height: 100px;">
+<br/>
+	<h4 align="center">Designed by Omeny Robert contact macrobert000@gmail.com whatsapp 0757227257</h4></footer>
+<<style>
+.PP{
+	text-align: center;
+}
+</style>
+</html>

@@ -1,0 +1,2247 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="datatable/dataTable.bootstrap.min.css">
+	<style>
+		.bod{
+	background-color: #101b3c;
+	color: white;
+}
+		.height10{
+			height:10px;
+		}
+		.mtop10{
+			margin-top:10px;
+		}
+		.modal-label{
+			position:relative;
+			top:7px
+		}
+	</style>
+</head>
+<body class="bod">
+<div class="container">
+	<div  style="background-color: black; color: white; height: 200px;" class="container-fluid">
+	<h1 class="page-header text-center" style="font-size: 50px;">Agape Primary And Nursery School Accounting System</h1>
+	<div style="display: flex;">
+	<a href="index.php"><h3 style="color: white;">Back</h3></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>Report1</h2>
+</div>
+	<br/><br/>
+</div><br/><br/>
+
+
+<div style="width: 2000px;">
+	<h1>Add Students school fees information</h1><a href="greaterorequal.php"><h5>50% and above</h5></a><a href="lessorequal.php"><h5>below 50%</h5></a><a href="seventy.php"><h5>Above 75%</h5></a><a href="lessseventy.php"><h5>below 75%</h5></a>
+	<h1><a href="expenditure.php">Expenditure</a></h1>
+	<div style="display: flex; justify-content: space-around; width: 700px; background-color: black; margin-bottom: 20px;">
+	<h3><a href="p.1.php" style="color: white;">P.1</h3>
+		<h3><a href="p2.php" style="color: white;">P.2</h3>
+			<h3><a href="p3.php" style="color: white;">P.3</h3>
+				<h3><a href="p4.php" style="color: white;">P.4</h3>
+					<h3><a href="p5.php"  style="color: white;">P.5</h3>
+						<h3><a href="p6.php"  style="color: white;">P.6</h3>
+							<h3><a href="p7.php"  style="color: white;">P.7</h3>
+</div>
+
+<form method="POST" action="uploadstu.php">
+
+<input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined variable: id in <b>E:\school\www\studentreg.php</b> on line <b>72</b><br />
+">
+
+Date:<input type="date" name="date" required="required" style="color: black" />
+Reg:No <input type="text" name="regno"  required="required" style="color: black" />
+Full Name: <input type="text" name="name" required="required"  style="color: black" />
+Class: <input type="text" name="class" required="required"  style="color: black"/>
+Guardian: <input type="text" name="gad" required="required"  style="color: black" />
+Guardian's Contact: <input type="text" name="gadno" required="required"  style="color: black"/>
+Amount Paid: <input type="number" name="amountpaid" required="required"  style="color: black" />
+Amount to be paid:<input type="number" name="amounttopay" required="required" style="color: black"/>
+<button class="btn-primary" type="submit" name="save" >Save</button>
+</form>
+</div>
+
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+						</div>
+
+
+
+
+
+
+			<div class="row">
+			</div>
+			<div class="height10">
+			</div>
+			<h2><a href="print.php" class="btn btn-primary">Print PDF</a></h2>
+			<div class="row">
+
+				<table id="myTable" style="width: 1300px; margin-left: -210px; color: black; background-color: white;" class="table table-bordered">
+
+<thead>
+					<tr>
+						<th>Date</th>
+						<th>Reg:No</th>
+						<th>Full Name:</th>
+						<th>Class:</th>
+						<th>Guardian:</th>
+						<td>Guardian's Contact:</td>
+						<th>Amount Paid:</th>
+						<td>Amount to be paid:</td>
+						<td>Balance</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+<tbody>
+        <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p1</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>150000</td>
+	   		<td>200000</td>
+	   		<td>50000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal10"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_10">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 150000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=10" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal10" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="10"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p1" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="150000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-16</td>
+	   		<td>aps002</td>
+	   		<td>baker Mukungi</td>
+	   		<td>p.2</td>
+	   		<td>ACV</td>
+	   		<td>077577454</td>
+	   		<td>100000</td>
+	   		<td>200000</td>
+	   		<td>100000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal11"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_11">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-16<br/><br/>Amount Paid<br/> 100000<br/><br/>Name<br/>baker Mukungi</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=11" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal11" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="11"/>
+														<input type="text" class="form-control" name="date" value="2021-02-16" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="aps002" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="baker Mukungi" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.2" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="ACV" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="077577454" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="100000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-16</td>
+	   		<td>aps002</td>
+	   		<td>baker Mukungi</td>
+	   		<td>p.3</td>
+	   		<td>ACV</td>
+	   		<td>077577454</td>
+	   		<td>100000</td>
+	   		<td>200000</td>
+	   		<td>100000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal12"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_12">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-16<br/><br/>Amount Paid<br/> 100000<br/><br/>Name<br/>baker Mukungi</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=12" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal12" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="12"/>
+														<input type="text" class="form-control" name="date" value="2021-02-16" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="aps002" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="baker Mukungi" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.3" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="ACV" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="077577454" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="100000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.4</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal13"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_13">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=13" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal13" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="13"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.4" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.5</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal14"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_14">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=14" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal14" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="14"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.5" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.6</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal15"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_15">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=15" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal15" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="15"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.6" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.7</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal16"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_16">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=16" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal16" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="16"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.7" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p1</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>70000</td>
+	   		<td>200000</td>
+	   		<td>130000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal17"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_17">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 70000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=17" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal17" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="17"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p1" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="70000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.2</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal18"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_18">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=18" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal18" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="18"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.2" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.3</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal19"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_19">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=19" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal19" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="19"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.3" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.4</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal20"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_20">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=20" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal20" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="20"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.4" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.5</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal21"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_21">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=21" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal21" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="21"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.5" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.6</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal22"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_22">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=22" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal22" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="22"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.6" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.7</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal23"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_23">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=23" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal23" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="23"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.7" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p1</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal24"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_24">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=24" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal24" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="24"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p1" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.2</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal25"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_25">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=25" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal25" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="25"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.2" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.3</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal26"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_26">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=26" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal26" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="26"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.3" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.4</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal27"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_27">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=27" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal27" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="27"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.4" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.5</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal28"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_28">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_28" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=28" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal28" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="28"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.5" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+             <tr>
+	   		<td>2021-02-23</td>
+	   		<td>anps001</td>
+	   		<td>Ebil jessy</td>
+	   		<td>p.7</td>
+	   		<td>MR EWO</td>
+	   		<td>075635665</td>
+	   		<td>50000</td>
+	   		<td>200000</td>
+	   		<td>150000</td>
+<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#form_modal29"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+	   		 |<button type="button" class="btn btn-danger" data-toggle="modal" 
+	   		 data-target="#delete_29">Delete</button></td>				
+	   	</tr>
+
+
+
+<div class="modal fade" style="color: black;" id="delete_29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Record</h4></center>
+            </div>
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h3 class="text-center">Date<br/>&nbsp;&nbsp;2021-02-23<br/><br/>Amount Paid<br/> 50000<br/><br/>Name<br/>Ebil jessy</h3>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <a href="studentreg.php?id=29" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="form_modal29" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<form method="POST" action="editstu.php">
+											<div class="modal-header">
+												<h3 class="modal-title" style="color:black;">Edit and Update</h3>
+											</div>
+											<div class="modal-body" style="color: black;">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
+													<div class="form-group">
+														<label>Date</label>
+														<input type="hidden" name="id" value="29"/>
+														<input type="text" class="form-control" name="date" value="2021-02-23" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Reg no</label>
+														<input type="text" class="form-control" name="regno" value="anps001" required="required"/>
+													</div>
+                                                    
+                                                    <div class="form-group">
+														<label>Full Name</label>
+														<input type="text" class="form-control" name="name" value="Ebil jessy" required="required"/>
+													</div>
+
+													<div class="form-group">
+														<label>Class</label>
+														<input type="text" class="form-control" name="class" value="p.7" required="required"/>
+													</div>
+
+                                                  	<div class="form-group">
+														<label>Guardian</label>
+														<input type="text" class="form-control" name="gad" value="MR EWO" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Guardian's Number</label>
+														<input type="text" class="form-control" name="gadno" value="075635665" required="required"/>
+													</div>
+
+
+                                                     <div class="form-group">
+														<label>Amount Paid</label>
+														<input type="text" class="form-control" name="amountpaid" value="50000" required="required"/>
+													</div>
+													<div class="form-group">
+														<label>Amount to be Paid</label>
+														<input type="text" class="form-control" name="amounttopay" value="200000" required="required"/>
+													</div>
+
+
+												</div>	
+											</div>
+											<div style="clear:both;"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span> Close</button>
+												<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+     </tbody>
+<tr><td colspan="5"><h1>The Total</h1></td>   <td><h1> 1220000</h1></td> <td><h1> 4000000</h1></td> <td><h1> 2780000</h1></td></tr>
+</table>
+
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="datatable/jquery.dataTables.min.js"></script>
+<script src="datatable/dataTable.bootstrap.min.js"></script>
+<!-- generate datatable on our table -->
+<script>
+$(document).ready(function(){
+	//inialize datatable
+    $('#myTable').DataTable();
+
+    //hide alert
+    $(document).on('click', '.close', function(){
+    	$('.alert').hide();
+    })
+});
+</script>
+</body>
+<footer style="background-color: black; color: white; height: 100px;">
+<br/>
+	<h4 align="center">Designed by Omeny Robert contact macrobert000@gmail.com whatsapp 0757227257</h4></footer>
+<<style>
+.PP{
+	text-align: center;
+}
+</style>
+</html>
